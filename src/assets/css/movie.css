@@ -1,0 +1,182 @@
+h2, h3, h4 {
+  color: #fbfbfb;
+}
+
+p, .p {
+  color: #BEBDBF;
+}
+
+.p:hover {
+  color: #fff;
+}
+
+.form-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.form-group .form-control {
+  width: 80%;
+}
+
+.form-group img {
+  width: 40px;
+  margin-left: 6px;
+}
+
+.outer-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+.inner-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.titleCon {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.mainTitle {
+  color: #c5c4e4;
+  text-align: left;
+  margin-left: 10px;
+  margin-bottom: 8px;
+}
+
+.card {
+  width: 180px;
+  min-height: 320px;
+  padding: 4px;
+  background-color: #042a34;
+}
+
+.img {
+  width: 100%;
+  min-height: 84%;
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.imgCon {
+  width: 12rem;
+  height: 16rem;
+}
+
+.imgCon .img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 12rem;
+  height: 16rem;
+}
+
+.overview {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+  color: #fbfbfb;
+}
+
+.textInfo {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  text-align: left;
+  padding: 0 8px;
+  margin-right: 12px;
+  margin-top: 2.5rem;
+}
+
+.arrowIcon {
+  margin: 0 8px;
+}
+
+.arrowIcon img {
+  width: 3rem;
+}
+
+.card.main h4 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-top: 4px;
+}
+
+.card.main.list {
+  width: 50%;
+}
+
+@media screen and (min-width: 768px) {
+  .card.main.list {
+    width: 33.333333333%;
+  }
+}
+
+.card.today {
+  width: 70%;
+  min-height: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-flow: column-reverse wrap;
+          flex-flow: column-reverse wrap;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-left: 8px;
+}
+
+.card.search {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+}
+
+.infoCon {
+  padding: 0 1rem;
+  text-align: left;
+}
+
+.infoCon .mainTitle {
+  margin-left: 0;
+}
+
+.infoCon .detail {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.infoCon .detail p {
+  margin-right: 1rem;
+}
+
+.infoCon .tagline {
+  font-style: italic;
+}
+/*# sourceMappingURL=movie.css.map */

@@ -1,0 +1,162 @@
+//顏色定義
+$bg: #042a34;
+$black: #012326;
+$darkpurple: #6C748C;
+$purple: #c5c4e4;
+$gray: #BEBDBF;
+
+//
+h2,h3,h4{
+  color:#fbfbfb;
+}
+p,.p{
+  color: $gray;
+}
+.p:hover{
+  color: #fff;
+}
+// componemt
+.form-group{
+  display: flex;
+  justify-content: center;
+  .form-control{
+    width: 80%;
+  }
+  img{
+    width: 40px;
+    margin-left: 6px;
+  }
+}
+.outer-row{
+  display: flex;
+  flex-wrap: wrap;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  // &::-webkit-scrollbar{
+  //   display: none;
+  // }
+}
+.inner-row{
+  display: flex;
+  
+  // overflow-x: scroll;
+}
+.titleCon{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.mainTitle{
+  color: $purple;
+  text-align: left;
+  margin-left: 10px;
+  margin-bottom: 8px;
+}
+
+.card{
+  width: 180px;
+  min-height: 320px;
+  padding: 4px;
+  background-color: $bg;
+}
+
+.img{
+  width: 100%;
+  min-height: 84%;
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.imgCon{
+  width: 12rem;
+  height: 16rem;
+  .img{
+    object-fit: contain;
+    width: 12rem;
+    height: 16rem;
+  }
+}
+
+.overview{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+  color: #fbfbfb;
+}
+
+.textInfo{
+  align-self: flex-start;
+  text-align: left;
+  padding: 0 8px;
+  margin-right: 12px;
+  margin-top: 2.5rem;
+}
+
+.arrowIcon{
+  margin: 0 8px;
+  img{
+    width: 3rem;
+  }
+}
+//頁面
+.card {
+  &.main {
+    h4 {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      margin-top: 4px;
+    }
+    &.list{
+      width: 50%;
+    }
+    @media screen and(min-width: 768px) {
+      &.list{
+        width: 33.333333333%;
+      }
+    }
+  }
+}
+
+.card{
+  &.today{
+    width: 70%;
+    min-height: 0;
+    display: flex;
+    flex-flow: column-reverse wrap;
+    align-items: flex-start;
+    margin-left: 8px;
+  }
+}
+
+.card{
+  &.search{
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    // justify-content: space-between;
+    // border: 1px solid #fff;
+    // margin: 8px 0;
+  }
+}
+
+
+//movieinfo
+.infoCon{
+  padding: 0 1rem;
+  text-align: left;
+  .mainTitle{
+    margin-left: 0;
+  }
+  .detail{
+    display: flex;
+    p{
+      margin-right: 1rem;
+    }
+  }
+  .tagline{
+    font-style: italic;
+  }
+}
