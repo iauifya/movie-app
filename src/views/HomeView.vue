@@ -1,5 +1,5 @@
 <template>
-  <div class="container mt-5">
+  <div class="container mt-5 mb-4">
     <div class="form-group mb-5">
       <input
         type="text"
@@ -52,14 +52,16 @@
           v-for="comingM in comingMovies"
           :key="comingM.id"
         >
-          <div
-            class="img"
-            :style="{
-              backgroundImage: `url(https://www.themoviedb.org/t/p/original/${comingM.poster_path})`
-            }"
-          ></div>
-          <h4>{{ comingM.title }}</h4>
-          <p>{{ comingM.release_date }}</p>
+          <router-link :to="`/movieinfo/${comingM.id}`" class="h-100">
+            <div
+              class="img"
+              :style="{
+                backgroundImage: `url(https://www.themoviedb.org/t/p/original/${comingM.poster_path})`
+              }"
+            ></div>
+            <h4>{{ comingM.title }}</h4>
+            <p>{{ comingM.release_date }}</p>
+          </router-link>
         </div>
       </div>
     </div>
@@ -88,18 +90,21 @@
           v-for="popularM in popularMovies"
           :key="popularM.id"
         >
-          <div
-            class="img"
-            :style="{
-              backgroundImage: `url(https://www.themoviedb.org/t/p/original/${popularM.poster_path})`
-            }"
-          ></div>
-          <h4>{{ popularM.title }}</h4>
-          <p>{{ popularM.release_date }}</p>
+          <router-link :to="`/movieinfo/${popularM.id}`" class="h-100">
+            <div
+              class="img"
+              :style="{
+                backgroundImage: `url(https://www.themoviedb.org/t/p/original/${popularM.poster_path})`
+              }"
+            ></div>
+            <h4>{{ popularM.title }}</h4>
+            <p>{{ popularM.release_date }}</p>
+          </router-link>
         </div>
       </div>
     </div>
   </div>
+  <MyFooter/>
 </template>
 <script setup>
 import { ref, onMounted } from "vue";
@@ -107,6 +112,7 @@ import { ref, onMounted } from "vue";
 // import axios from "axios";
 import { mapActions, mapState, mapGetters } from "../map-state";
 import { useStore } from "vuex";
+import MyFooter from '../components/MyFooter.vue';
 const store = useStore();
 
 const search = ref("");
