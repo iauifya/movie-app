@@ -5,28 +5,26 @@ $darkpurple: #6C748C;
 $purple: #c5c4e4;
 $gray: #BEBDBF;
 
-//
+//mixin
+@mixin imginit{
+  width: 100%;
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+//字型設定
 h2,h3,h4{
   color:#fbfbfb;
 }
-p,.p{
+p,.p,span{
   color: $gray;
 }
 .p:hover{
   color: #fff;
 }
+
 // componemt
-.form-group{
-  display: flex;
-  justify-content: center;
-  .form-control{
-    width: 80%;
-  }
-  img{
-    width: 40px;
-    margin-left: 6px;
-  }
-}
 .outer-row{
   display: flex;
   flex-wrap: wrap;
@@ -41,6 +39,19 @@ p,.p{
   
   // overflow-x: scroll;
 }
+
+.form-group{
+  display: flex;
+  justify-content: center;
+  .form-control{
+    width: 80%;
+  }
+  img{
+    width: 40px;
+    margin-left: 6px;
+  }
+}
+
 .titleCon{
   width: 100%;
   display: flex;
@@ -60,14 +71,18 @@ p,.p{
   background-color: $bg;
 }
 
-.img{
-  width: 100%;
-  min-height: 84%;
-  background-position: center center;
-  background-size: contain;
-  background-repeat: no-repeat;
+.bgImg{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 28vh;
+  @include imginit;
+  background-size: 110%;
 }
-
+.img{
+  min-height: 84%;
+  @include imginit;
+}
 .imgCon{
   width: 12rem;
   height: 16rem;
@@ -100,6 +115,7 @@ p,.p{
     width: 3rem;
   }
 }
+
 //頁面
 .card {
   &.main {
@@ -144,9 +160,21 @@ p,.p{
 
 
 //movieinfo
+// .poster{
+//   background-color: #eee;
+// }
 .infoCon{
   padding: 0 1rem;
   text-align: left;
+  padding-top: 10rem;
+  .original_title{
+    color: #d1d1d1;
+    text-shadow: 0.1rem 0.1rem 0.2rem rgba(0,0,0,.8);
+  }
+  .title{
+    font-size: 1.8rem;
+    text-shadow: 0.1rem 0.1rem 0.2rem rgba(0,0,0,.8);
+  }
   .mainTitle{
     margin-left: 0;
   }
@@ -154,6 +182,9 @@ p,.p{
     display: flex;
     p{
       margin-right: 1rem;
+    }
+    span{
+      margin-right: 8px;
     }
   }
   .tagline{

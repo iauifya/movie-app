@@ -2,12 +2,28 @@ h2, h3, h4 {
   color: #fbfbfb;
 }
 
-p, .p {
+p, .p, span {
   color: #BEBDBF;
 }
 
 .p:hover {
   color: #fff;
+}
+
+.outer-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+.inner-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .form-group {
@@ -26,22 +42,6 @@ p, .p {
 .form-group img {
   width: 40px;
   margin-left: 6px;
-}
-
-.outer-row {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  overflow-x: scroll;
-  overflow-y: hidden;
-}
-
-.inner-row {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 .titleCon {
@@ -68,9 +68,21 @@ p, .p {
   background-color: #042a34;
 }
 
-.img {
+.bgImg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 28vh;
   width: 100%;
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-size: 110%;
+}
+
+.img {
   min-height: 84%;
+  width: 100%;
   background-position: center center;
   background-size: contain;
   background-repeat: no-repeat;
@@ -160,6 +172,17 @@ p, .p {
 .infoCon {
   padding: 0 1rem;
   text-align: left;
+  padding-top: 10rem;
+}
+
+.infoCon .original_title {
+  color: #d1d1d1;
+  text-shadow: 0.1rem 0.1rem 0.2rem rgba(0, 0, 0, 0.8);
+}
+
+.infoCon .title {
+  font-size: 1.8rem;
+  text-shadow: 0.1rem 0.1rem 0.2rem rgba(0, 0, 0, 0.8);
 }
 
 .infoCon .mainTitle {
@@ -174,6 +197,10 @@ p, .p {
 
 .infoCon .detail p {
   margin-right: 1rem;
+}
+
+.infoCon .detail span {
+  margin-right: 8px;
 }
 
 .infoCon .tagline {
