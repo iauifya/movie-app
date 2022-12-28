@@ -11,6 +11,11 @@ $black: #282828;
 $grey: #D9D9D9;
 $white: #fbfbfb;
 
+$bg: #042a34;
+$black: #012326;
+$darkpurple: #6C748C;
+$purple: #c5c4e4;
+$gray: #BEBDBF;
 
 // global設定
 * h1,
@@ -61,11 +66,11 @@ ol{
 //btn
 .btn {
     position: relative;
-    border: 1px solid $black;
-    // border-radius: 32px;
+    // border: 1px solid $black;
+    border-radius: 8px;
     padding: 8px 28px;
-    background-color: $lightYellow;
-    color: $mainGreen;
+    background-color: $purple;
+    color: $bg;
     box-shadow: 3px 4px 0px $black;
     font-size: 1.5rem;
     line-height: 1.8;
