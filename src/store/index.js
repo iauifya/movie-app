@@ -30,8 +30,8 @@ export default createStore({
   },
   getters: {
     voteHighest(state){
-      let max = Math.max(...state.popularMovies.map(p => p.vote_count));
-      let voteHighests = state.popularMovies.find(p => p.vote_count === max);
+      let max = Math.max(...state.nowMovies.map(p => p.vote_average));
+      let voteHighests = state.nowMovies.find(p => p.vote_average === max);
       // console.log(voteHighests);
       return voteHighests//成功!!!! 
     }

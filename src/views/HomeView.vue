@@ -17,7 +17,7 @@
     </div>
     <hr />
     <div class="titleCon">
-      <h3 class="mainTitle">現在熱播</h3>
+      <h3 class="mainTitle">現正熱播</h3>
       <router-link to="/nowlist">
         <h4 class="p">查看更多</h4>
       </router-link>
@@ -72,7 +72,7 @@
         <div v-for="(item, key, index) of voteHighest" :key="index">
           <h3>{{ key === "title" ? item : "" }}</h3>
           <p>{{ key === "release_date" ? item : "" }}</p>
-          <p class="overview">{{ key === "overview" ? item : "" }}</p>
+          <p class="overview tBrief">{{ key === "overview" ? item : "" }}</p>
         </div>
       </div>
     </div>

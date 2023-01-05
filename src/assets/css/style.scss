@@ -40,7 +40,7 @@ h1{
     font-size: 5rem;
 }
 h4{
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 
 
@@ -92,26 +92,7 @@ ol{
     z-index:-2;
     border-radius: 4px;
 }
-.btn:hover{
-    z-index:1;
-    color: $black !important;
-    background:transparent;
-}            
 
-.btn:before {
-    transition: .3s;
-    background: $green;
-    z-index:-1;
-}          
-
-.btn:hover:after,.btn:hover:before {
-    width: 100%;
-}
-.btn.btn_sm {
-    // padding: 6px 24px;
-    letter-spacing: 1.2px;
-    font-size: 1.2rem;
-}
 // .btn.btn_secondary {
 //     background-color: $white;
 //     color: $lightBlue;
@@ -130,7 +111,7 @@ ol{
 
 .btn:active,
 .btn:focus {
-    background-color: rgb(109, 160, 0);
+    background-color: $darkpurple;
     color: #fff;
     outline: transparent;
 }

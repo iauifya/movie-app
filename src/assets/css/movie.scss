@@ -36,8 +36,6 @@ p,.p,span{
 }
 .inner-row{
   display: flex;
-  
-  // overflow-x: scroll;
 }
 
 .form-group{
@@ -65,8 +63,8 @@ p,.p,span{
 }
 
 .card{
-  width: 180px;
-  min-height: 320px;
+  width: 8rem;
+  min-height: 16rem;
   padding: 4px;
   background-color: $bg;
 }
@@ -78,9 +76,16 @@ p,.p,span{
   height: 28vh;
   @include imginit;
   background-size: 110%;
+  box-shadow:0 0 15px 10px rgba(20,112,137,.3);
 }
+@media(min-width: 540px){
+  .bgImg{
+    height: 44vh;
+  }
+}
+
 .img{
-  min-height: 84%;
+  min-height: 75%;
   @include imginit;
 }
 .imgCon{
@@ -94,13 +99,20 @@ p,.p,span{
 }
 
 .overview{
+  color: #fbfbfb;
+  margin-top: 1rem;
+}
+@media(min-width: 540px){
+  .overview{
+    margin-top: 1.6rem;
+  }
+}
+.tBrief{
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 4;
   overflow: hidden;
-  color: #fbfbfb;
 }
-
 .textInfo{
   align-self: flex-start;
   text-align: left;
@@ -116,7 +128,7 @@ p,.p,span{
   }
 }
 
-//頁面
+//card管理
 .card {
   &.main {
     h4 {
@@ -127,6 +139,12 @@ p,.p,span{
     }
     &.list{
       width: 50%;
+      min-height: 18.5rem;
+      margin-bottom: .5rem;
+      .img{
+        min-height: 85%;
+        width: 100%;
+      }
     }
     @media screen and(min-width: 768px) {
       &.list{
@@ -150,19 +168,17 @@ p,.p,span{
 .card{
   &.search{
     width: 100%;
-    display: flex;
-    flex-flow: row nowrap;
-    // justify-content: space-between;
-    // border: 1px solid #fff;
-    // margin: 8px 0;
   }
 }
 
-
-//movieinfo
-// .poster{
-//   background-color: #eee;
-// }
+//searchView
+.card.search{
+  a{
+    display: flex;
+    flex-flow: row nowrap;
+  }
+}
+//movieinfoView
 .infoCon{
   padding: 0 1rem;
   text-align: left;
@@ -178,16 +194,60 @@ p,.p,span{
   .mainTitle{
     margin-left: 0;
   }
-  .detail{
+  .vote{
+    @include imginit;
+    width: 44px;
+    height: 44px;
+    background-image: url('@/assets/img/circle.png');
+    margin: 0 8px;
+    span{
+      font-size: 1.2rem;
+      color: $darkpurple;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  .type{
+    display: flex;
+    // margin-left: .5rem;
+    p{
+      margin-right: 4px;
+    }
+  }
+  .timeDetail{
     display: flex;
     p{
-      margin-right: 1rem;
-    }
-    span{
-      margin-right: 8px;
+      margin-right: .5rem;
     }
   }
   .tagline{
     font-style: italic;
+  }
+}
+
+.mask{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0,0,0,.6);
+}
+.popupBox{
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 20%;
+  z-index: 999;
+  .modal{
+    /* width: 8rem; */
+    min-height: 8rem;
+    padding: 4px;
+    background-color: #042a34;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
   }
 }

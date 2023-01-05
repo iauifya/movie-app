@@ -23,7 +23,7 @@ h1 {
 }
 
 h4 {
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 div {
@@ -72,31 +72,9 @@ ol {
   border-radius: 4px;
 }
 
-.btn:hover {
-  z-index: 1;
-  color: #012326 !important;
-  background: transparent;
-}
-
-.btn:before {
-  -webkit-transition: .3s;
-  transition: .3s;
-  background: #84BF03;
-  z-index: -1;
-}
-
-.btn:hover:after, .btn:hover:before {
-  width: 100%;
-}
-
-.btn.btn_sm {
-  letter-spacing: 1.2px;
-  font-size: 1.2rem;
-}
-
 .btn:active,
 .btn:focus {
-  background-color: #6da000;
+  background-color: #6C748C;
   color: #fff;
   outline: transparent;
 }
