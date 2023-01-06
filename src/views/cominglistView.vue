@@ -1,5 +1,5 @@
 <template>
-  <div class="container mt-4">
+  <div class="container my-4">
     <div class="row">
       <h3 class="mainTitle">即將上映影片列表</h3>
       <div
@@ -8,12 +8,11 @@
         :key="comingM.id"
       >
         <router-link :to="`/movieinfo/${comingM.id}`" class="h-100">
-          <div
-            class="img"
-            :style="{
-              backgroundImage: `url(https://www.themoviedb.org/t/p/original/${comingM.poster_path})`
-            }"
-          ></div>
+          <div>
+            <img :src="(`https://www.themoviedb.org/t/p/original/${comingM.poster_path}`)" alt="" 
+            loading="lazy"
+            class="img">
+          </div>
           <h4>{{ comingM.title }}</h4>
           <p>{{ comingM.release_date }}</p>
         </router-link>
@@ -28,6 +27,7 @@
       </div>
     </div>
   </div>
+  <MyFooter/>
 </template>
 <script setup>
 import { onMounted } from "vue";
@@ -35,6 +35,7 @@ import { onMounted } from "vue";
 import { useStore } from "vuex";
 const store = useStore();
 import { mapState, mapActions } from "../map-state";
+import MyFooter from '../components/MyFooter.vue';
 const { comingMovies } = mapState();
 const { cnextPage, cprevPage } = mapActions();
 onMounted(() => {

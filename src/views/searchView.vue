@@ -5,8 +5,11 @@
       <div class="card search" v-for="m in movies" :key="m.id">
         <router-link :to="`/movieinfo/${m.id}`" class="h-100">
           <div class="imgCon">
-            <div class="img" :style="{ backgroundImage: `url(https://www.themoviedb.org/t/p/original/${ m.poster_path})`}">
-            </div>
+            <div>
+            <img :src="(`https://www.themoviedb.org/t/p/original/${m.poster_path}`)" alt="" 
+            loading="lazy"
+            class="img">
+          </div>
           </div>
           <div class="textInfo">
             <h4>{{m.title}}</h4>
@@ -18,6 +21,7 @@
       
     </div>
   </div>
+  <MyFooter/>
 </template>
 <script setup>
 // import { onMounted } from "vue";
@@ -27,6 +31,7 @@ const store = useStore();
 // const route = useRoute();
 // import axios from "axios";
 import { mapState } from '../map-state';
+import MyFooter from '../components/MyFooter.vue';
 const { movies } = mapState();
 // const { nextPage } = mapActions();
 let page = store.state.currentPage;

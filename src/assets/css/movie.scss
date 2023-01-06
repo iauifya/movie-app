@@ -100,11 +100,15 @@ p,.p,span{
 
 .overview{
   color: #fbfbfb;
-  margin-top: 1rem;
+  &.mt{
+    margin-top: 1rem;
+  }
 }
 @media(min-width: 540px){
   .overview{
-    margin-top: 1.6rem;
+    &.mt{
+      margin-top: 1.6rem;
+    }
   }
 }
 .tBrief{

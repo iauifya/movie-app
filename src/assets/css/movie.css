@@ -110,11 +110,14 @@ p, .p, span {
 
 .overview {
   color: #fbfbfb;
+}
+
+.overview.mt {
   margin-top: 1rem;
 }
 
 @media (min-width: 540px) {
-  .overview {
+  .overview.mt {
     margin-top: 1.6rem;
   }
 }

@@ -30,7 +30,8 @@ export default createStore({
   },
   getters: {
     voteHighest(state){
-      let max = Math.max(...state.nowMovies.map(p => p.vote_average));
+      let max = Math.min(...state.nowMovies.map(p => p.vote_average));
+      // console.log(max);
       let voteHighests = state.nowMovies.find(p => p.vote_average === max);
       // console.log(voteHighests);
       return voteHighests//成功!!!! 
@@ -137,14 +138,20 @@ export default createStore({
         .catch(err => console.dir(err));
     },
     nnextPage({commit,dispatch,state}){
-      if(state.ncurrentPage > state.ntotal_pages) return; //如果這個條件成立就中止函式
+      if(state.ncurrentPage >= state.ntotal_pages){
+        alert('目前已達最後一頁')
+        return
+      }  //如果這個條件成立就中止函式
       // currentPage = state.scurrentPage; //不能在mutation以外的地方去修改state的資料，所以要複製一個新的資料出來
       commit('NNEXT_PAGE'); //呼叫mutations的函式
       dispatch("loadingNowmovies"); //呼叫此函式
       
     },
     nprevPage({commit,dispatch,state}){
-      if(state.ncurrentPage === 1) return; //如果這個條件成立就中止函式
+      if(state.ncurrentPage === 1) {
+        alert('目前已達第一頁')
+        return
+      } //如果這個條件成立就中止函式
       // currentPage = state.scurrentPage; //不能在mutation以外的地方去修改state的資料，所以要複製一個新的資料出來
       commit('NPREV_PAGE'); //呼叫mutations的函式
       dispatch("loadingNowmovies"); //呼叫此函式
@@ -163,15 +170,19 @@ export default createStore({
         .catch(err => console.dir(err));
     },
     cnextPage({commit,dispatch,state}){
-      if(state.ccurrentPage > state.ctotal_pages) return; //如果這個條件成立就中止函式
-      // currentPage = state.scurrentPage; //不能在mutation以外的地方去修改state的資料，所以要複製一個新的資料出來
+      if(state.ccurrentPage >= state.ctotal_pages){
+        alert('目前已達最後一頁')
+        return
+      }  //如果這個條件成立就中止函式
       commit('CNEXT_PAGE'); //呼叫mutations的函式
       dispatch("loadingComingmovies"); //呼叫此函式
       
     },
     cprevPage({commit,dispatch,state}){
-      if(state.ccurrentPage === 1) return; //如果這個條件成立就中止函式
-      // currentPage = state.scurrentPage; //不能在mutation以外的地方去修改state的資料，所以要複製一個新的資料出來
+      if(state.ccurrentPage === 1) {
+        alert('目前已達第一頁')
+        return
+      } //如果這個條件成立就中止函式
       commit('CPREV_PAGE'); //呼叫mutations的函式
       dispatch("loadingComingmovies"); //呼叫此函式
     },
@@ -199,15 +210,19 @@ export default createStore({
         .catch(err => console.dir(err));
     },
     pnextPage({commit,dispatch,state}){
-      if(state.pcurrentPage > state.ptotal_pages) return; //如果這個條件成立就中止函式
-      // currentPage = state.scurrentPage; //不能在mutation以外的地方去修改state的資料，所以要複製一個新的資料出來
+      if(state.pcurrentPage >= state.ptotal_pages){
+        alert('目前已達最後一頁')
+        return
+      }  //如果這個條件成立就中止函式
       commit('PNEXT_PAGE'); //呼叫mutations的函式
       dispatch("loadingPopularmovies"); //呼叫此函式
       
     },
     pprevPage({commit,dispatch,state}){
-      if(state.pcurrentPage === 1) return; //如果這個條件成立就中止函式
-      // currentPage = state.scurrentPage; //不能在mutation以外的地方去修改state的資料，所以要複製一個新的資料出來
+      if(state.pcurrentPage === 1) {
+        alert('目前已達第一頁')
+        return
+      } //如果這個條件成立就中止函式
       commit('PPREV_PAGE'); //呼叫mutations的函式
       dispatch("loadingPopularmovies"); //呼叫此函式
     },

@@ -1,6 +1,7 @@
 <template>
-  <div class="container mt-5 mb-4">
-    <div class="form-group mb-5">
+  <div class="container mt-3 mb-5">
+    <img src="@/assets/img/logo.png" alt="" style="width: 45px">
+    <div class="form-group mt-2 mb-4">
       <input
         type="text"
         v-model.trim="search"
@@ -10,7 +11,7 @@
       <router-link :to="`/result/${search}`">
         <img
           @click="searchMovies(search)"
-          src="@/assets/img/searchicon.png"
+          src="@/assets/img/searchicon2.png"
           alt=""
         />
       </router-link>
@@ -74,6 +75,7 @@
           <p>{{ key === "release_date" ? item : "" }}</p>
           <p class="overview tBrief">{{ key === "overview" ? item : "" }}</p>
         </div>
+        
       </div>
     </div>
     <hr />
@@ -121,7 +123,7 @@ const { searchMovies } = mapActions();
 // 從vuex取出nowMovies、comingMovies、latestMovie、popularMovies資料
 const { nowMovies, comingMovies, popularMovies } = mapState(); //陣列適合用此方式
 const { voteHighest } = mapGetters();
-
+// console.log(Object.entries(voteHighest));
 // let newVote =  JSON.parse(JSON.stringify(voteHighests));
 // watch(
 //   () => voteHighest,

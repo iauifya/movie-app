@@ -1,5 +1,5 @@
 <template>
-  <div class="container mt-4">
+  <div class="container my-4">
     <div class="row">
       <h3 class="mainTitle">熱門選擇影片列表</h3>
       <div
@@ -7,13 +7,12 @@
         v-for="popularM in popularMovies"
         :key="popularM.id"
       >
-        <router-link :to="`/movieinfo/${comingM.id}`" class="h-100">
-          <div
-            class="img"
-            :style="{
-              backgroundImage: `url(https://www.themoviedb.org/t/p/original/${popularM.poster_path})`
-            }"
-          ></div>
+        <router-link :to="`/movieinfo/${popularM.id}`" class="h-100">
+          <div>
+            <img :src="(`https://www.themoviedb.org/t/p/original/${popularM.poster_path}`)" alt="" 
+            loading="lazy"
+            class="img">
+          </div>
           <h4>{{ popularM.title }}</h4>
           <p>{{ popularM.release_date }}</p>
         </router-link>
@@ -28,6 +27,7 @@
       </div>
     </div>
   </div>
+  <MyFooter/>
 </template>
 <script setup>
 import { onMounted } from "vue";
@@ -35,6 +35,7 @@ import { onMounted } from "vue";
 import { useStore } from "vuex";
 const store = useStore();
 import { mapState, mapActions } from "../map-state";
+import MyFooter from '../components/MyFooter.vue';
 const { popularMovies } = mapState();
 const { pnextPage, pprevPage } = mapActions();
 onMounted(() => {

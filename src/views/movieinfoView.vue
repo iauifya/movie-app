@@ -5,7 +5,8 @@
       :style="{
         backgroundImage: `url(https://www.themoviedb.org/t/p/original/${movieRef.backdrop_path})`
       }"
-    ></div>
+    >
+    </div>
     <div class="infoCon">
       <!-- <h3>{{ movieId }}</h3> -->
       <p class="original_title">{{ movieRef.original_title }}</p>
@@ -33,7 +34,7 @@
         "{{ movieRef.tagline }}"
       </h4>
 
-      <p class="overview">{{ movieRef.overview }}</p>
+      <p class="overview mt">{{ movieRef.overview }}</p>
       <h6 class="mainTitle mt-4 mb-1">製作國家</h6>
       <div
         v-for="country in movie.production_countries"
@@ -71,12 +72,14 @@
       </div>
     </div>
   </div>
+  <MyFooter/>
 </template>
 <script setup>
 import { ref, onMounted } from "vue";
 // import { computed } from "vue";
 import axios from "axios";
 import { useRoute } from "vue-router";
+import MyFooter from '../components/MyFooter.vue';
 // import videojs from "video.js/dist/video.min";
 // import "video.js/dist/video-js.min.css";
 const route = useRoute();
