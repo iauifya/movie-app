@@ -8,7 +8,7 @@
         :key="comingM.id"
       >
         <router-link :to="`/movieinfo/${comingM.id}`" class="h-100">
-          <div>
+          <div class="imgCon">
             <img :src="(`https://www.themoviedb.org/t/p/original/${comingM.poster_path}`)" alt="" 
             loading="lazy"
             class="img">
