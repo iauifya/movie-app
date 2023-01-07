@@ -28,11 +28,11 @@
         <div class="card main" v-for="nowM in nowMovies" :key="nowM.id">
           <router-link :to="`/movieinfo/${nowM.id}`" class="h-100">
             <div
-              class="img"
-              :style="{
-                backgroundImage: `url(https://www.themoviedb.org/t/p/original/${nowM.poster_path})`
-              }"
-            ></div>
+            >
+              <img :src="(`https://www.themoviedb.org/t/p/original/${nowM.poster_path}`)" alt="" 
+              loading="lazy"
+              class="img main">
+            </div>
             <h4>{{ nowM.title }}</h4>
             <p>{{ nowM.release_date }}</p>
           </router-link>
@@ -54,12 +54,11 @@
           :key="comingM.id"
         >
           <router-link :to="`/movieinfo/${comingM.id}`" class="h-100">
-            <div
-              class="img"
-              :style="{
-                backgroundImage: `url(https://www.themoviedb.org/t/p/original/${comingM.poster_path})`
-              }"
-            ></div>
+            <div>
+              <img :src="(`https://www.themoviedb.org/t/p/original/${comingM.poster_path}`)" alt="" 
+              loading="lazy"
+              class="img main">
+            </div>
             <h4>{{ comingM.title }}</h4>
             <p>{{ comingM.release_date }}</p>
           </router-link>
@@ -70,7 +69,13 @@
     <div class="row">
       <h3 class="mainTitle">今日推薦</h3>
       <div class="card today">
-        <div v-for="(item, key, index) of voteHighest" :key="index">
+        <div v-for="(item, key, index) of voteHighest" :key="index" :data-set="item">
+          <div :img="key === 'poster_path' ? item : ''">
+            <img v-if="key === 'poster_path'" :src="(`https://www.themoviedb.org/t/p/original/${item}`)" alt="" class="img today">
+          </div>
+          <router-link :to="`/movieinfo/${item}`" :id="key === 'id' ? item : ''" class="h-100">
+            <h4 v-if="key === 'id'" class="p">看更多...</h4>
+          </router-link>
           <h3>{{ key === "title" ? item : "" }}</h3>
           <p>{{ key === "release_date" ? item : "" }}</p>
           <p class="overview tBrief">{{ key === "overview" ? item : "" }}</p>
@@ -93,12 +98,11 @@
           :key="popularM.id"
         >
           <router-link :to="`/movieinfo/${popularM.id}`" class="h-100">
-            <div
-              class="img"
-              :style="{
-                backgroundImage: `url(https://www.themoviedb.org/t/p/original/${popularM.poster_path})`
-              }"
-            ></div>
+            <div>
+              <img :src="(`https://www.themoviedb.org/t/p/original/${popularM.poster_path}`)" alt="" 
+              loading="lazy"
+              class="img main">
+            </div>
             <h4>{{ popularM.title }}</h4>
             <p>{{ popularM.release_date }}</p>
           </router-link>

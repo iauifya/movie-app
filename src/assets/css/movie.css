@@ -66,6 +66,7 @@ p, .p, span {
   min-height: 16rem;
   padding: 4px;
   background-color: #042a34;
+  border-color: transparent !important;
 }
 
 .bgImg {
@@ -94,6 +95,17 @@ p, .p, span {
   background-position: center center;
   background-size: contain;
   background-repeat: no-repeat;
+}
+
+.img.main {
+  height: 11rem;
+}
+
+.img.today {
+  position: absolute;
+  width: 8rem;
+  left: 15rem;
+  margin-top: -4rem;
 }
 
 .imgCon {
@@ -171,7 +183,7 @@ p, .p, span {
 }
 
 .card.today {
-  width: 70%;
+  width: 60%;
   min-height: 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -184,6 +196,7 @@ p, .p, span {
       -ms-flex-align: start;
           align-items: flex-start;
   margin-left: 8px;
+  text-align: left;
 }
 
 .card.search {

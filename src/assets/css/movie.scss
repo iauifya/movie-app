@@ -67,6 +67,7 @@ p,.p,span{
   min-height: 16rem;
   padding: 4px;
   background-color: $bg;
+  border-color: transparent !important;
 }
 
 .bgImg{
@@ -87,7 +88,17 @@ p,.p,span{
 .img{
   min-height: 75%;
   @include imginit;
+  &.main{
+    height: 11rem;
+  }
+  &.today{
+    position: absolute;
+    width: 8rem;
+    left: 15rem;
+    margin-top: -4rem;
+  }
 }
+
 .imgCon{
   width: 12rem;
   height: 16rem;
@@ -160,12 +171,13 @@ p,.p,span{
 
 .card{
   &.today{
-    width: 70%;
+    width: 60%;
     min-height: 0;
     display: flex;
     flex-flow: column-reverse wrap;
     align-items: flex-start;
     margin-left: 8px;
+    text-align: left;
   }
 }
 
