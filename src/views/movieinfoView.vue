@@ -1,18 +1,22 @@
 <template>
-  <div v-if="movie">
-    <div
+  <div v-if="movie" style="height: 100vh">
+    <div 
+      v-if="movieRef.backdrop_path"
       class="poster bgImg"
       :style="{
         backgroundImage: `url(https://www.themoviedb.org/t/p/original/${movieRef.backdrop_path})`
       }"
     >
     </div>
+    <div v-else class="bgImg" :style="{
+        backgroundImage: `url(https://www.themoviedb.org/t/p/original/${movieRef.poster_path})`
+      }"></div>
     <div class="infoCon">
       <!-- <h3>{{ movieId }}</h3> -->
       <p class="original_title">{{ movieRef.original_title }}</p>
       <h2 class="title">{{ movieRef.title }}</h2>
       <div class="d-flex align-items-end">
-        <div class="btn" @click="togglePopup">
+        <div class="btn mt-2" @click="togglePopup">
           <img src="@/assets/img/player.png" alt="" style="width: 20px" />
           預告片
         </div>
@@ -56,7 +60,7 @@
       data-setup="{}"
     ></video> -->
     <div class="mask" v-if="popupOpen" @click="togglePopup"></div>
-    <div v-if="videoKey" class="popupBox">
+    <div v-if="src" class="popupBox">
       <iframe
         v-if="popupOpen"
         loading="lazy"
