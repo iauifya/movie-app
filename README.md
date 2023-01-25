@@ -4,8 +4,9 @@
 
 ### 使用技術
 * 使用vue3開發 + vue cli環境部屬
- * 使用set up語法糖開發  
+  * 使用set up語法糖開發   
 * 使用vuex做資料管理
+  * 使用mapState、mapAction輔助函數
 * 使用vue router控制路由
   * 動態路由參數 ：渲染電影資訊頁畫面 
 * 使用axios串接第三方api
